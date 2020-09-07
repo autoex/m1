@@ -3,10 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+const menu = [
+    {
+        label : 'Home',
+        link: '/'
+    },
+    {
+        label : 'About',
+        link: '/about'
+    },
+    {
+        label : 'Contact',
+        link: '/contact'
+    },
+];
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App menu={menu} />
   </React.StrictMode>,
   document.getElementById('root')
 );
