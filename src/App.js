@@ -1,6 +1,7 @@
 import React from "react";
 import DropDown from "./DropDown";
 import Header from "./Header";
+import RegForm from "./RegForm";
 
 
 class App extends React.Component {
@@ -12,6 +13,7 @@ class App extends React.Component {
     return <>
         <Header menu={this.props.menu}/>
       <DropDown  />
+      <RegForm />
     </>
   }
 }

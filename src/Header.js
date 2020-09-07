@@ -5,9 +5,9 @@ class Header extends React.Component {
 
 
 
+
     render() {
         let arrMenu = this.props.menu;
-        console.log(arrMenu)
         return <>
             <ul>
             {arrMenu.map((el, index) =>
