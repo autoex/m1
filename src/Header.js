@@ -1,4 +1,5 @@
 import React from "react";
+import {NavLink} from "react-router-dom";
 
 class Header extends React.Component {
 
@@ -11,7 +12,7 @@ class Header extends React.Component {
         return <>
             <ul>
             {arrMenu.map((el, index) =>
-                <li key={index}><a href={el.link}>{el.label}</a></li>)}
+                <li key={index}><NavLink to={el.link}>{el.label}</NavLink></li>)}
             </ul>
         </>
     }

@@ -3,23 +3,37 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {BrowserRouter} from "react-router-dom";
+import DropDown from "./DropDown";
+import RegForm from "./RegForm";
+import ToggleComponent from "./ToggleComponent";
 const menu = [
     {
         label : 'Home',
         link: '/'
+
     },
     {
-        label : 'About',
-        link: '/about'
+        label : 'DropDown',
+        link: '/dropdown',
+        component: DropDown
     },
     {
-        label : 'Contact',
-        link: '/contact'
+        label : 'RegForm',
+        link: '/regform',
+        component: RegForm
     },
+    {
+        label : 'ToggleComponent',
+        link: '/togglecomponent',
+        component: ToggleComponent
+    }
 ];
 ReactDOM.render(
   <React.StrictMode>
+      <BrowserRouter>
     <App menu={menu} />
+      </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

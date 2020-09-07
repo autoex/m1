@@ -1,7 +1,6 @@
 import React from "react";
-import DropDown from "./DropDown";
 import Header from "./Header";
-import RegForm from "./RegForm";
+import {Route} from "react-router-dom";
 
 
 class App extends React.Component {
@@ -10,10 +9,26 @@ class App extends React.Component {
 
 
   render() {
+    const routeComponent =  this.props.menu.map((el, index )=>
+
+
+        <Route path={el.link} component={el.component} key={index} />
+    );
+
     return <>
         <Header menu={this.props.menu}/>
-      <DropDown  />
+
+    {/*  <DropDown  />
       <RegForm />
+      <ToggleComponent />*/}
+
+
+     {/* <Route path={'/dropdown'} component={DropDown}/>
+      <Route path={'/regform'} component={RegForm}/>*/}
+
+
+    <div>  {routeComponent}
+    </div>
     </>
   }
 }
