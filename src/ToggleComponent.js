@@ -1,34 +1,39 @@
 import React from "react";
+import './ToggleComponent.css'
 
 class ToggleComponent extends React.Component {
-
-constructor(props){
-    super(props)
-    this.state = {
-        isLoading: false
+    constructor(props) {
+        super(props);
+        this.state = {
+            isHide: true
+        }
     }
 
-}
-toggleFunc =()=> {
-    this.setState(
-        {isLoading: !this.state.isLoading}
-    )
-    console.log(this.state.isLoading);
+    toggle =()=> {
+      this.setState({
+          isHide: !this.state.isHide
 
-}
+
+      });
+        console.log(this.state.isHide);
+    }
+
+
 
 
     render() {
 
+        let hideBox;
 
+        if(!this.state.isHide) {
+
+            hideBox = <div>dfdsgsg</div>
+        }
 
         return <>
-
-            <hr/>
-            toggle button
-            <hr/>
-            <button onClick={this.toggleFunc}>ok</button>
-        </>
+            <button onClick={this.toggle}>Click</button>
+            {hideBox}
+            </>
     }
 }
 
