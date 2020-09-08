@@ -1,34 +1,59 @@
 import React from "react";
 
 
-class DropDown extends React.Component {
+class ToDo extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
-            isOpened: false
+            inputValue: 'ToDo here',
+            toDoList: ['Test ToDo'
+
+            ]
         }
     }
-    toggleState =()=> {
 
+    inputHandle = (e) => {
+        console.log(this.state.inputValue)
         this.setState({
-            isOpened: !this.state.isOpened
-        })
+            inputValue: e.target.value
+        });
+
+
     }
 
+    clearInputOnclick = (e) => {
+        e.target.value = ''
+    }
+
+    sendButton = (e) => {
+        e.preventDefault();
+
+        let toDo = this.state.inputValue;
+        debugger;
+        this.setState({toDoList: this.state.toDoList.push(toDo).bind(this)});
+        console.log(this.state.toDoList)
+
+    }
 
     render() {
-    let dropDownText;
-
-    if (this.state.isOpened) {
-        dropDownText = <div>Drop DOWWWWWWWWWWWWWWWWWWn</div>
-    }
-
+        console.log(this.state.inputValue);
+        /*  debugger
+          let toDoList = this.state.toDoList.map((el, index)=> <p key={index}>{el}</p>);*/
         return <>
-           {console.log('isOpened: ', this.state.isOpened)}
-            <div onClick={this.toggleState}>Drop Down box</div>
-            {dropDownText}
+            <form action="">
+                <input type="text" onChange={this.inputHandle} onClick={this.clearInputOnclick}
+                       value={this.state.inputValue}/>
+                <button onClick={this.sendButton}>Send</button>
+            </form>
+
+            <div className={'toDoList'}>
+                {/*{toDoList}*/}
+            </div>
+
         </>
+
+
     }
 }
 
-export default DropDown;
+export default ToDo

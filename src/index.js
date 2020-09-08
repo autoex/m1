@@ -7,6 +7,7 @@ import {BrowserRouter} from "react-router-dom";
 import DropDown from "./DropDown";
 import RegForm from "./RegForm";
 import ToggleComponent from "./ToggleComponent";
+import ToDo from "./ToDo";
 const menu = [
     {
         label : 'Home',
@@ -27,6 +28,11 @@ const menu = [
         label : 'ToggleComponent',
         link: '/togglecomponent',
         component: ToggleComponent
+    },
+    {
+        label : 'ToDo',
+        link: '/todo',
+        component: ToDo
     }
 ];
 ReactDOM.render(

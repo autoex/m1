@@ -35,7 +35,7 @@ class App extends React.Component {
             </div>
 
             <div>
-                {state.map((el, index) => <div key={index}>{el}</div>)}
+               {/* {state.map((el, index) => <div key={index}>{el}</div>)}*/}
             </div>
         </>
     }
